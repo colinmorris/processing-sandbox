@@ -17,6 +17,11 @@ void settings() {
 void setup() {
   java.io.File folder = new java.io.File(dataPath(data_dir));
   filenames = folder.list();
+  if (filenames.length == 0) {
+    println("No files found in", data_dir, "Exiting.");
+    exit();
+    return;
+  }
   println(filenames[0]);
     
   drawImage();
